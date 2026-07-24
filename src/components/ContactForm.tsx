@@ -95,10 +95,10 @@ export default function ContactForm() {
       {error && <p className="text-[12.5px] text-warm-ink">{error}</p>}
 
       <PrimaryButtonAction type="submit" className="mt-2">
-        メールソフトで送信する
+        この内容でメールを作成する
       </PrimaryButtonAction>
       <p className="text-center text-[11.5px] text-ink-faint">
-        ※現在はメールソフト起動のみに対応しています。フォームからの直接送信は準備中です。
+        ※ボタンを押すと、入力内容を記載したメールがお使いのメールソフトで開きます。そのまま送信してください。
       </p>
     </form>
   );
