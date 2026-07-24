@@ -42,11 +42,11 @@ const AUDIENCES: {
   },
 ];
 
-const CONTENT_TAGS = [
-  { label: "StandFM", href: undefined },
-  { label: "note", href: undefined },
+const CONTENT_TAGS: { label: string; href?: string; external?: boolean }[] = [
+  { label: "StandFM" },
+  { label: "note", href: "https://note.com/magic_alpaca7688", external: true },
   { label: "コラム", href: "/column" },
-  { label: "朗読・音声", href: undefined },
+  { label: "朗読・音声" },
 ];
 
 export default function Home() {
@@ -191,6 +191,8 @@ export default function Home() {
                   <a
                     key={t.label}
                     href={t.href}
+                    target={t.external ? "_blank" : undefined}
+                    rel={t.external ? "noopener noreferrer" : undefined}
                     className="rounded-pill border border-border bg-surface px-[18px] py-[9px] text-[13px] text-ink-soft transition-colors duration-300 hover:border-accent hover:text-accent"
                   >
                     {t.label}

@@ -11,7 +11,11 @@ const CONTACT_LINKS = ["個人相談", "法人相談", "講演依頼", "メデ�
   label,
   href: "/contact",
 }));
-const SNS_LINKS = ["Instagram", "StandFM", "note"].map((label) => ({ label, href: "#" }));
+const SNS_LINKS = [
+  { label: "Instagram", href: "#" },
+  { label: "StandFM", href: "#" },
+  { label: "note", href: "https://note.com/magic_alpaca7688", external: true },
+];
 
 export default function TopFooter() {
   return (
@@ -45,7 +49,7 @@ function FooterColumn({
   links,
 }: {
   heading: string;
-  links: { label: string; href: string }[];
+  links: { label: string; href: string; external?: boolean }[];
 }) {
   return (
     <div className="flex flex-col gap-3 text-[13px] text-ink-soft">
@@ -56,6 +60,8 @@ function FooterColumn({
         <a
           key={link.label}
           href={link.href}
+          target={link.external ? "_blank" : undefined}
+          rel={link.external ? "noopener noreferrer" : undefined}
           className="transition-colors duration-300 hover:text-ink"
         >
           {link.label}
