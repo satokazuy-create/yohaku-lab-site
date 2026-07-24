@@ -186,7 +186,7 @@ export default function SupporterPage() {
             ))}
           </div>
           <div className="mt-8 flex justify-center">
-            <PrimaryButton href="/#contact">支援者向け研修・相談をする</PrimaryButton>
+            <PrimaryButton href="/contact">支援者向け研修・相談をする</PrimaryButton>
           </div>
         </Container>
       </Reveal>

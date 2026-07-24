@@ -141,7 +141,7 @@ export default function WatabonPage() {
           <br />
           公認心理師／臨床発達心理士／社会福祉士／精神保健福祉士
         </p>
-        <PrimaryButton href="/#contact" className="mt-2">
+        <PrimaryButton href="/contact" className="mt-2">
           わたぼんについて相談する
         </PrimaryButton>
       </Reveal>

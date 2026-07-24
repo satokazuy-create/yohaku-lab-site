@@ -167,7 +167,7 @@ export default function ProfilePage() {
       <SimpleFooter>
         <div className="flex flex-wrap justify-center gap-5">
           <SecondaryButton href="/yohaku-toha">余白とは</SecondaryButton>
-          <PrimaryButton href="/#contact">お問い合わせ</PrimaryButton>
+          <PrimaryButton href="/contact">お問い合わせ</PrimaryButton>
         </div>
         <TextLink href="/" className="mt-3 border-none pb-0 text-[12.5px] text-ink-faint hover:text-ink">
           TOPページに戻る

@@ -8,8 +8,8 @@ const NAV_ITEMS: { href: string; label: string; key?: string }[] = [
   { href: "/yohaku-toha", label: "余白とは", key: "yohaku-toha" },
   { href: "/#audiences", label: "できること", key: "audiences" },
   { href: "/#content", label: "コンテンツ", key: "content" },
-  { href: "#", label: "プロダクト" },
-  { href: "#", label: "実績" },
+  { href: "/product", label: "プロダクト", key: "product" },
+  { href: "/results", label: "実績", key: "results" },
   { href: "/profile", label: "プロフィール", key: "profile" },
 ];
 
@@ -20,6 +20,8 @@ const ACTIVE_MAP: Record<string, string> = {
   "/supporter": "audiences",
   "/corporate": "audiences",
   "/community": "audiences",
+  "/product": "product",
+  "/results": "results",
 };
 
 export default function Header() {
@@ -52,7 +54,7 @@ export default function Header() {
           ))}
         </nav>
         <Link
-          href="/#contact"
+          href="/contact"
           className="whitespace-nowrap rounded-pill border border-ink px-[22px] py-2.5 text-[13px] transition-colors duration-300 hover:bg-ink hover:text-surface"
         >
           お問い合わせ

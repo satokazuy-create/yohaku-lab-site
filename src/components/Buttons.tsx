@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const SWEEP_GRADIENT =
+export const SWEEP_GRADIENT =
   "linear-gradient(100deg, var(--color-ink) 0%, var(--color-ink) 45%, var(--color-accent) 50%, var(--color-ink) 55%, var(--color-ink) 100%)";
 
 export function PrimaryButton({
@@ -20,6 +20,24 @@ export function PrimaryButton({
     >
       {children}
     </Link>
+  );
+}
+
+export function PrimaryButtonAction({
+  children,
+  className = "",
+  type = "button",
+  ...rest
+}: React.ButtonHTMLAttributes<HTMLButtonElement>) {
+  return (
+    <button
+      type={type}
+      className={`inline-flex items-center justify-center whitespace-nowrap rounded-pill bg-[length:220%_100%] bg-[position:100%_0] px-8 py-3.5 text-sm text-surface transition-[background-position] duration-700 ease-out hover:bg-[position:0%_0] ${className}`}
+      style={{ backgroundImage: SWEEP_GRADIENT }}
+      {...rest}
+    >
+      {children}
+    </button>
   );
 }
 

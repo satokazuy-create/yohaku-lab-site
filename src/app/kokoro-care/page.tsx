@@ -85,7 +85,7 @@ export default function KokoroCarePage() {
             </p>
           </div>
           <div className="mt-7 flex justify-center">
-            <PrimaryButton href="/#contact">オンライン相談を申し込む</PrimaryButton>
+            <PrimaryButton href="/contact">オンライン相談を申し込む</PrimaryButton>
           </div>
         </Container>
       </Reveal>
@@ -116,7 +116,7 @@ export default function KokoroCarePage() {
             ))}
           </div>
           <div className="mt-7 flex justify-center">
-            <PrimaryButton href="/#contact">家族介護者支援について相談する</PrimaryButton>
+            <PrimaryButton href="/contact">家族介護者支援について相談する</PrimaryButton>
           </div>
         </Container>
       </Reveal>

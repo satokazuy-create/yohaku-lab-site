@@ -220,7 +220,7 @@ export default function CorporatePage() {
             ))}
           </div>
           <div className="mt-9 flex justify-center">
-            <PrimaryButton href="/#contact">法人向けの相談をする</PrimaryButton>
+            <PrimaryButton href="/contact">法人向けの相談をする</PrimaryButton>
           </div>
         </Container>
       </Reveal>

@@ -107,7 +107,8 @@
   animation: yh-flow 10s linear infinite;
 }
 
-input:focus {
+input:focus,
+textarea:focus {
   border-color: var(--color-accent);
   animation: yh-glow 1.8s ease-in-out infinite;
 }

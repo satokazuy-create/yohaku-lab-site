@@ -190,7 +190,7 @@ export default function CommunityPage() {
             ))}
           </div>
           <div className="mt-8 flex justify-center">
-            <PrimaryButton href="/#contact">地域活動について相談する</PrimaryButton>
+            <PrimaryButton href="/contact">地域活動について相談する</PrimaryButton>
           </div>
         </Container>
       </Reveal>
