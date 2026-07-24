@@ -1,26 +1,124 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-bg: oklch(96.5% 0.014 85);
+  --color-bg-alt: oklch(93% 0.02 82);
+  --color-surface: oklch(99% 0.004 85);
+  --color-ink: oklch(27% 0.015 85);
+  --color-ink-soft: oklch(46% 0.018 85);
+  --color-ink-faint: oklch(62% 0.015 85);
+  --color-border: oklch(88% 0.012 85);
+  --color-accent: oklch(46% 0.07 150);
+  --color-accent-soft: oklch(91% 0.03 150);
+  --color-accent-soft2: oklch(84% 0.045 150);
+  --color-warm: oklch(70% 0.09 50);
+  --color-warm-soft: oklch(92% 0.035 55);
+  --color-warm-ink: oklch(45% 0.1 50);
+  --color-sky-soft: oklch(90% 0.025 230);
+  --color-sky-ink: oklch(45% 0.06 230);
+  --color-lav-soft: oklch(90% 0.025 300);
+  --color-lav-ink: oklch(42% 0.08 300);
+
+  --font-serif: var(--font-shippori-mincho), serif;
+  --font-sans: var(--font-noto-sans-jp), "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+
+  --radius-pill: 999px;
+  --radius-card: 20px;
+  --radius-card-sm: 16px;
+
+  --breakpoint-mob: 560px;
+  --breakpoint-tab: 900px;
+  --breakpoint-nav: 1080px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  html {
+    color-scheme: light;
+    -webkit-font-smoothing: antialiased;
+    text-wrap: pretty;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  ::selection {
+    background: oklch(90% 0.03 150);
+    color: oklch(28% 0.015 85);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ---- YOHAKU motion system ---- */
+@keyframes yh-drift1 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(24px, -28px); }
+}
+@keyframes yh-drift2 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-28px, 20px); }
+}
+@keyframes yh-rise {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes yh-flow {
+  to { stroke-dashoffset: -300; }
+}
+@keyframes yh-glow {
+  0%, 100% { box-shadow: 0 0 0 0 oklch(46% 0.07 150 / 0.22); }
+  50% { box-shadow: 0 0 0 8px oklch(46% 0.07 150 / 0); }
+}
+
+.yh-drift-1 { animation: yh-drift1 15s ease-in-out infinite; }
+.yh-drift-2 { animation: yh-drift2 18s ease-in-out infinite; }
+
+.yh-rise {
+  opacity: 0;
+  animation: yh-rise 0.9s ease-out forwards;
+}
+
+.yh-reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+.yh-reveal.yh-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.yh-fade-p {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+.yh-fade-p.yh-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.yh-flow-line {
+  animation: yh-flow 10s linear infinite;
+}
+
+input:focus {
+  border-color: var(--color-accent);
+  animation: yh-glow 1.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .yh-rise, .yh-reveal, .yh-fade-p {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }

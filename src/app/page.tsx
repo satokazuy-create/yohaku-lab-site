@@ -1,65 +1,235 @@
-import Image from "next/image";
+import Container from "@/components/Container";
+import DriftBlob from "@/components/DriftBlob";
+import Reveal from "@/components/Reveal";
+import Tag, { TagVariant } from "@/components/Tag";
+import TopFooter from "@/components/TopFooter";
+import { PrimaryButton, SecondaryButton, TextLink } from "@/components/Buttons";
+
+const AUDIENCES: {
+  tag: string;
+  variant: TagVariant;
+  title: string;
+  desc: string;
+  href: string;
+}[] = [
+  {
+    tag: "個人",
+    variant: "individual",
+    title: "暮らしのこころケア",
+    desc: "ここりは／オンライン相談／家族介護者支援／自分史／わたぼん",
+    href: "/kokoro-care",
+  },
+  {
+    tag: "支援者",
+    variant: "supporter",
+    title: "支援者の回復",
+    desc: "支援者回復プログラム／バーンアウト予防／TIC／スーパービジョン",
+    href: "/supporter",
+  },
+  {
+    tag: "法人",
+    variant: "corporate",
+    title: "メンタルヘルス経営",
+    desc: "EAP／ストレスチェック／研修／管理職研修／健康経営支援",
+    href: "/corporate",
+  },
+  {
+    tag: "地域",
+    variant: "community",
+    title: "地域とつながる",
+    desc: "余白をひらく会／街歩き／家族介護者教室／地域イベント",
+    href: "/community",
+  },
+];
+
+const CONTENT_TAGS = [
+  { label: "StandFM", href: undefined },
+  { label: "note", href: undefined },
+  { label: "コラム", href: "/column" },
+  { label: "朗読・音声", href: undefined },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <>
+      {/* ============ HERO ============ */}
+      <section className="relative mx-auto flex max-w-[1200px] flex-col items-center gap-9 overflow-hidden px-5 pb-22 pt-24 text-center tab:px-10">
+        <DriftBlob
+          color="var(--color-warm-soft)"
+          size={320}
+          top={-100}
+          left={-70}
+          variant={1}
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+        <DriftBlob
+          color="var(--color-accent-soft)"
+          size={380}
+          bottom={-120}
+          right={-90}
+          variant={2}
+        />
+
+        <div className="yh-rise relative text-xs font-medium tracking-[0.28em] text-ink-faint [animation-delay:0.1s]">
+          RECOVERY DESIGN LAB
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <h1 className="yh-rise relative font-serif text-[clamp(36px,5.2vw,64px)] font-medium leading-[1.55] tracking-[0.02em] [animation-delay:0.25s]">
+          こころに羽を。
+          <br />
+          からだに余白を。
+          <br />
+          人生に彩りを。
+        </h1>
+        <p className="yh-rise relative max-w-[560px] text-base leading-[1.9] text-ink-soft [animation-delay:0.4s]">
+          メンタルヘルスを、ポップに軽やかに。
+          <br />
+          心理学・コミュニティデザイン・身体感覚・AIを組み合わせ、
+          <br />
+          「回復」をデザインする研究所です。
+        </p>
+        <div className="yh-rise relative mt-2 flex flex-wrap justify-center gap-4 [animation-delay:0.55s]">
+          <PrimaryButton href="/yohaku-toha">余白について</PrimaryButton>
+          <SecondaryButton href="#audiences">できることを見る</SecondaryButton>
         </div>
-      </main>
-    </div>
+        <div
+          className="yh-rise relative mt-8 flex w-full max-w-[820px] items-center justify-center rounded-[24px] font-mono text-[13px] tracking-[0.04em] text-ink-faint [animation-delay:0.7s]"
+          style={{
+            aspectRatio: "16/7",
+            background:
+              "repeating-linear-gradient(120deg, var(--color-bg-alt), var(--color-bg-alt) 18px, oklch(90% 0.02 82) 18px, oklch(90% 0.02 82) 36px)",
+          }}
+        >
+          hero image — 光・自然・余白を感じる風景写真
+        </div>
+        <svg
+          viewBox="0 0 800 50"
+          className="relative mt-2 h-[34px] w-full max-w-[760px] opacity-60"
+        >
+          <path
+            d="M0,25 C100,0 200,50 300,25 C400,0 500,50 600,25 C700,0 750,12 800,25"
+            fill="none"
+            stroke="var(--color-accent)"
+            strokeWidth="1.4"
+            strokeDasharray="5 9"
+            className="yh-flow-line"
+          />
+        </svg>
+      </section>
+
+      {/* ============ PHILOSOPHY ============ */}
+      <Reveal className="bg-bg-alt px-5 py-25 tab:px-10">
+        <Container maxWidth="920px" className="!px-0">
+          <div className="flex flex-col items-center gap-7 text-center">
+            <div className="text-xs tracking-[0.24em] text-ink-faint">
+              PHILOSOPHY
+            </div>
+            <h2 className="font-serif text-[clamp(24px,3vw,34px)] font-medium leading-[1.7]">
+              余白を、社会のインフラに。
+            </h2>
+            <p className="max-w-[640px] text-[15.5px] leading-[2] text-ink-soft">
+              「メンタルヘルス」や「回復」という言葉は、ときに重く、身構えられます。
+              YOHAKU Labは、その本質を専門性でしっかり支えながらも、
+              誰もが深呼吸できるくらい軽やかに届けたいと考えています。
+              急かさない、詰め込まない、比べない——余白のある関わり方を、
+              個人にも、支援者にも、組織にも、地域にも。
+            </p>
+            <TextLink href="/yohaku-toha">
+              余白とは何か、8つの領域を読む →
+            </TextLink>
+          </div>
+        </Container>
+      </Reveal>
+
+      {/* ============ AUDIENCES ============ */}
+      <Reveal id="audiences" className="px-5 py-25 tab:px-10">
+        <Container>
+          <div className="mb-14 flex flex-col items-center gap-3.5 text-center">
+            <div className="text-xs tracking-[0.24em] text-ink-faint">
+              WHAT WE OFFER
+            </div>
+            <h2 className="font-serif text-[clamp(24px,3vw,32px)] font-medium">
+              できること
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 gap-px overflow-hidden rounded-card border border-border bg-border tab:grid-cols-4">
+            {AUDIENCES.map((a) => (
+              <a
+                key={a.href}
+                href={a.href}
+                className="relative z-10 flex flex-col gap-4 bg-surface p-7 transition-[transform,box-shadow] duration-400 ease-out hover:z-20 hover:-translate-y-1.5 hover:shadow-[0_18px_40px_oklch(27%_0.015_85/0.09)]"
+              >
+                <Tag variant={a.variant}>{a.tag}</Tag>
+                <h3 className="font-serif text-[19px] font-semibold text-ink">
+                  {a.title}
+                </h3>
+                <p className="text-[13.5px] leading-[1.9] text-ink-soft">
+                  {a.desc}
+                </p>
+              </a>
+            ))}
+          </div>
+        </Container>
+      </Reveal>
+
+      {/* ============ CONTENT TEASER ============ */}
+      <Reveal id="content" className="bg-bg-alt px-5 py-22 tab:px-10">
+        <Container className="flex flex-col gap-10">
+          <div className="flex flex-wrap items-center justify-between gap-8">
+            <div className="flex max-w-[480px] flex-col gap-2.5">
+              <div className="text-xs tracking-[0.24em] text-ink-faint">
+                CONTENT — 毎週更新
+              </div>
+              <h2 className="font-serif text-[clamp(22px,2.8vw,28px)] font-medium">
+                声と言葉で、余白を届ける。
+              </h2>
+              <p className="text-sm leading-[1.9] text-ink-soft">
+                StandFM・note・コラム・朗読・音声・動画。日々の暮らしに寄り添う更新を続けています。
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-3">
+              {CONTENT_TAGS.map((t) =>
+                t.href ? (
+                  <a
+                    key={t.label}
+                    href={t.href}
+                    className="rounded-pill border border-border bg-surface px-[18px] py-[9px] text-[13px] text-ink-soft transition-colors duration-300 hover:border-accent hover:text-accent"
+                  >
+                    {t.label}
+                  </a>
+                ) : (
+                  <span
+                    key={t.label}
+                    className="rounded-pill border border-border bg-surface px-[18px] py-[9px] text-[13px] text-ink-soft transition-colors duration-300 hover:border-accent hover:text-accent"
+                  >
+                    {t.label}
+                  </span>
+                )
+              )}
+            </div>
+          </div>
+          <div className="flex flex-wrap items-center gap-6 rounded-card border border-border bg-surface px-8 py-7 transition-[transform,box-shadow] duration-400 ease-out hover:-translate-y-1 hover:shadow-[0_18px_40px_oklch(27%_0.015_85/0.08)]">
+            <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-warm-soft font-serif text-[22px] text-warm">
+              絵
+            </div>
+            <div className="flex min-w-[220px] flex-1 flex-col gap-1.5">
+              <span className="text-[11px] tracking-[0.06em] text-ink-faint">
+                FEATURED — エッセイ漫画
+              </span>
+              <div className="font-serif text-lg font-semibold">
+                わたしの街の心理師さん 〜はじめ〜
+              </div>
+              <p className="text-[13px] leading-[1.8] text-ink-soft">
+                こころのケアを、日常の延長線上にあるものとして描く連載。専門性を軽やかに届ける、YOHAKU
+                Labらしいコンテンツの入口です。
+              </p>
+            </div>
+            <TextLink href="#" className="whitespace-nowrap">
+              読む →
+            </TextLink>
+          </div>
+        </Container>
+      </Reveal>
+
+      <TopFooter />
+    </>
   );
 }
