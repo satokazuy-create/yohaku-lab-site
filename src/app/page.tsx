@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Container from "@/components/Container";
 import DriftBlob from "@/components/DriftBlob";
 import Reveal from "@/components/Reveal";
@@ -90,15 +91,15 @@ export default function Home() {
           <PrimaryButton href="/yohaku-toha">余白について</PrimaryButton>
           <SecondaryButton href="#audiences">できることを見る</SecondaryButton>
         </div>
-        <div
-          className="yh-rise relative mt-8 flex w-full max-w-[820px] items-center justify-center rounded-[24px] font-mono text-[13px] tracking-[0.04em] text-ink-faint [animation-delay:0.7s]"
-          style={{
-            aspectRatio: "16/7",
-            background:
-              "repeating-linear-gradient(120deg, var(--color-bg-alt), var(--color-bg-alt) 18px, oklch(90% 0.02 82) 18px, oklch(90% 0.02 82) 36px)",
-          }}
-        >
-          hero image — 光・自然・余白を感じる風景写真
+        <div className="yh-rise relative mt-8 [animation-delay:0.7s]">
+          <Image
+            src="/images/hero-mountain-trail.png"
+            alt="山の稜線に続く木道を歩く人の水彩イラスト"
+            width={600}
+            height={600}
+            priority
+            className="h-[280px] w-[280px] rounded-full object-cover shadow-[0_24px_60px_oklch(27%_0.015_85/0.12)] tab:h-[380px] tab:w-[380px]"
+          />
         </div>
         <svg
           viewBox="0 0 800 50"
