@@ -3,6 +3,7 @@ import Container from "@/components/Container";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import PhotoPlaceholder from "@/components/PhotoPlaceholder";
+import PdfViewer from "@/components/PdfViewerClient";
 import SimpleFooter from "@/components/SimpleFooter";
 import { PrimaryButton, TextLink, SecondaryButton } from "@/components/Buttons";
 
@@ -43,15 +44,14 @@ export default function KokoroCarePage() {
           こころとからだの余白をつくる案内。詳しい内容は下記の資料からご覧いただけます。
         </p>
         <div className="overflow-hidden rounded-card border border-border bg-surface">
-          <iframe
-            src="/assets/kokoro-care.pdf"
-            title="ここりは 資料"
-            className="block h-[640px] w-full border-none"
-          />
+          <PdfViewer src="/assets/kokoro-care.pdf" />
         </div>
-        <div className="mt-4 flex justify-end">
+        <div className="mt-4 flex flex-col items-end gap-2">
+          <p className="text-xs text-ink-faint">
+            資料がうまく表示されない場合は、下のリンクから直接ご覧いただけます。
+          </p>
           <TextLink href="/assets/kokoro-care.pdf" target="_blank">
-            資料をダウンロード →
+            資料を新しいタブで開く →
           </TextLink>
         </div>
       </Reveal>
