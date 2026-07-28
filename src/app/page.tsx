@@ -76,7 +76,7 @@ export default function Home() {
           aria-hidden
           width={135}
           height={200}
-          className="yh-drift-1 pointer-events-none absolute left-[6%] top-6 hidden h-[70px] w-[47px] object-contain opacity-90 tab:block"
+          className="yh-drift-1 pointer-events-none absolute left-2 top-4 h-[42px] w-[28px] object-contain opacity-90 mob:left-[5%] mob:h-[54px] mob:w-[36px] tab:left-[6%] tab:top-6 tab:h-[70px] tab:w-[47px]"
         />
         <Image
           src="/images/accent-birds-soft.png"
@@ -84,7 +84,7 @@ export default function Home() {
           aria-hidden
           width={400}
           height={172}
-          className="yh-drift-2 pointer-events-none absolute right-[8%] top-10 hidden h-[46px] w-[108px] object-contain opacity-90 tab:block"
+          className="yh-drift-2 pointer-events-none absolute right-2 top-6 h-[26px] w-[60px] object-contain opacity-90 mob:right-[5%] mob:h-[34px] mob:w-[78px] tab:right-[8%] tab:top-10 tab:h-[46px] tab:w-[108px]"
         />
         <Image
           src="/images/accent-flowers-soft.png"
@@ -92,7 +92,7 @@ export default function Home() {
           aria-hidden
           width={250}
           height={195}
-          className="pointer-events-none absolute bottom-10 left-[4%] hidden h-[86px] w-[110px] object-contain opacity-95 tab:block"
+          className="pointer-events-none absolute bottom-4 left-1 h-[56px] w-[72px] object-contain opacity-95 mob:left-[3%] mob:h-[70px] mob:w-[90px] tab:bottom-10 tab:left-[4%] tab:h-[86px] tab:w-[110px]"
         />
 
         <div className="yh-rise relative text-xs font-medium tracking-[0.28em] text-ink-faint [animation-delay:0.1s]">
