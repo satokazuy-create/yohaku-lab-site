@@ -70,6 +70,31 @@ export default function Home() {
           variant={2}
         />
 
+        <Image
+          src="/images/accent-feather-soft.png"
+          alt=""
+          aria-hidden
+          width={135}
+          height={200}
+          className="yh-drift-1 pointer-events-none absolute left-[6%] top-6 hidden h-[70px] w-[47px] object-contain opacity-90 tab:block"
+        />
+        <Image
+          src="/images/accent-birds-soft.png"
+          alt=""
+          aria-hidden
+          width={400}
+          height={172}
+          className="yh-drift-2 pointer-events-none absolute right-[8%] top-10 hidden h-[46px] w-[108px] object-contain opacity-90 tab:block"
+        />
+        <Image
+          src="/images/accent-flowers-soft.png"
+          alt=""
+          aria-hidden
+          width={250}
+          height={195}
+          className="pointer-events-none absolute bottom-10 left-[4%] hidden h-[86px] w-[110px] object-contain opacity-95 tab:block"
+        />
+
         <div className="yh-rise relative text-xs font-medium tracking-[0.28em] text-ink-faint [animation-delay:0.1s]">
           RECOVERY DESIGN LAB
         </div>
