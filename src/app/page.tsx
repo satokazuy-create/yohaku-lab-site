@@ -105,18 +105,25 @@ export default function Home() {
           <br />
           人生に彩りを。
         </h1>
-        <p className="yh-rise relative max-w-[560px] text-base leading-[1.9] text-ink-soft [animation-delay:0.4s]">
+        <p className="yh-rise relative max-w-[600px] text-[14.5px] leading-[1.95] text-ink-soft [animation-delay:0.4s]">
+          公認心理師・社会福祉士・精神保健福祉士・キャリアコンサルタントとして、
+          <br />
+          個人相談・企業支援・地域づくりを通して、
+          <br />
+          一人ひとりが本来持つ「回復する力」と再びつながるお手伝いをしています。
+        </p>
+        <p className="yh-rise relative max-w-[560px] text-base leading-[1.9] text-ink-soft [animation-delay:0.55s]">
           メンタルヘルスを、ポップに軽やかに。
           <br />
           心理学・コミュニティデザイン・身体感覚・AIを組み合わせ、
           <br />
           「回復」をデザインする研究所です。
         </p>
-        <div className="yh-rise relative mt-2 flex flex-wrap justify-center gap-4 [animation-delay:0.55s]">
+        <div className="yh-rise relative mt-2 flex flex-wrap justify-center gap-4 [animation-delay:0.7s]">
           <PrimaryButton href="/yohaku-toha">余白について</PrimaryButton>
           <SecondaryButton href="#audiences">できることを見る</SecondaryButton>
         </div>
-        <div className="yh-rise relative mt-8 [animation-delay:0.7s]">
+        <div className="yh-rise relative mt-8 [animation-delay:0.85s]">
           <Image
             src="/images/hero-mountain-trail.png"
             alt="山の稜線に続く木道を歩く人の水彩イラスト"
