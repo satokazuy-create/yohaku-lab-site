@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Container from "@/components/Container";
 import DriftBlob from "@/components/DriftBlob";
 import Reveal from "@/components/Reveal";
@@ -33,49 +32,6 @@ export default function ProfilePage() {
           なぜ、YOHAKU Labを始めたのか
         </h1>
       </section>
-
-      {/* ============ 私の北極星 ============ */}
-      <Reveal className="bg-bg-alt px-5 py-16 tab:px-10" threshold={0.15}>
-        <Container maxWidth="900px" className="!px-0">
-          <div className="grid grid-cols-1 items-center gap-10 tab:grid-cols-[0.85fr_1.15fr]">
-            <div className="mx-auto w-full max-w-[300px] overflow-hidden rounded-card border border-border shadow-[0_18px_40px_oklch(27%_0.015_85/0.12)]">
-              <Image
-                src="/images/north-star-poster.png"
-                alt="「私の北極星」ポスター:人は、自分を回復させる力を、もともと持っている。"
-                width={1024}
-                height={1536}
-                className="block h-auto w-full object-cover"
-              />
-            </div>
-            <div className="flex flex-col items-start gap-5">
-              <div className="text-xs tracking-[0.24em] text-ink-faint">MY NORTH STAR</div>
-              <h2 className="font-serif text-[22px] font-semibold">私の北極星</h2>
-              <p className="font-serif text-[17px] font-medium leading-[1.8] text-ink">
-                人は、自分を回復させる力を、
-                <br />
-                もともと持っている。
-              </p>
-              <div className="flex flex-col gap-4 text-sm leading-[1.95] text-ink-soft">
-                <p className="m-0">
-                  私は、人には誰にでも、自分を回復させる力があると信じています。
-                </p>
-                <p className="m-0">
-                  誰かを変えたいわけではありません。答えを与えたいわけでもありません。
-                  <br />
-                  私は、その人が自分自身の力と再会する時間をつくりたい。
-                </p>
-                <p className="m-0">
-                  それが、私の仕事であり、私がつくる講座や相談、AIプロダクト、そしてYOHAKU
-                  Labに共通して流れる願いです。
-                </p>
-              </div>
-              <p className="font-serif text-sm text-ink-faint">
-                対話とテクノロジーで、あなたがあなたに還る時間を。
-              </p>
-            </div>
-          </div>
-        </Container>
-      </Reveal>
 
       {/* ============ マニフェスト ============ */}
       <section className="mx-auto max-w-[680px] px-5 pb-8 pt-10 tab:px-10">
