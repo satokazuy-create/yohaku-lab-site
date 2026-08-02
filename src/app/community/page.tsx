@@ -117,7 +117,7 @@ export default function CommunityPage() {
           ))}
         </div>
 
-        <div className="flex flex-col gap-2 rounded-card-sm bg-bg-alt px-7 py-6">
+        <div className="mb-9 flex flex-col gap-2 rounded-card-sm bg-bg-alt px-7 py-6">
           <div className="text-[11px] tracking-[0.06em] text-ink-faint">私たちが大切にしていること</div>
           <div className="flex flex-wrap gap-2.5">
             {VALUES.map((v) => (
@@ -126,6 +126,18 @@ export default function CommunityPage() {
               </span>
             ))}
           </div>
+        </div>
+
+        <div className="flex flex-col items-center gap-3 text-center">
+          <p className="text-[13px] text-ink-faint">
+            余白をひらく会の活動レポートや最新のお知らせは、専用サイトでご紹介しています。
+          </p>
+          <PrimaryButton
+            href="https://yohaku-wo-hiraku-kai-fuchu.netlify.app/"
+            target="_blank"
+          >
+            余白をひらく会の公式サイトを見る →
+          </PrimaryButton>
         </div>
       </Reveal>
 

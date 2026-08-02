@@ -7,14 +7,18 @@ export function PrimaryButton({
   href,
   children,
   className = "",
+  target,
 }: {
   href: string;
   children: React.ReactNode;
   className?: string;
+  target?: string;
 }) {
   return (
     <Link
       href={href}
+      target={target}
+      rel={target === "_blank" ? "noopener noreferrer" : undefined}
       className={`inline-flex items-center justify-center whitespace-nowrap rounded-pill bg-[length:220%_100%] bg-[position:100%_0] px-8 py-3.5 text-sm text-surface transition-[background-position] duration-700 ease-out hover:bg-[position:0%_0] ${className}`}
       style={{ backgroundImage: SWEEP_GRADIENT }}
     >
