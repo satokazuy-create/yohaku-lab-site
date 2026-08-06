@@ -1,4 +1,5 @@
 import Image from "next/image";
+import BrandMovieButton from "@/components/BrandMovieButton";
 import Container from "@/components/Container";
 import DriftBlob from "@/components/DriftBlob";
 import Reveal from "@/components/Reveal";
@@ -123,7 +124,8 @@ export default function Home() {
           <PrimaryButton href="/yohaku-toha">余白について</PrimaryButton>
           <SecondaryButton href="#audiences">できることを見る</SecondaryButton>
         </div>
-        <div className="yh-rise relative mt-8 [animation-delay:0.85s]">
+        <BrandMovieButton />
+        <div className="yh-rise relative mt-8 [animation-delay:1s]">
           <Image
             src="/images/hero-mountain-trail.png"
             alt="山の稜線に続く木道を歩く人の水彩イラスト"
