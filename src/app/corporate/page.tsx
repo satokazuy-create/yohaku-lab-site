@@ -59,6 +59,14 @@ const FLOW_STEPS = [
   { no: "4", title: "導入・伴走", desc: "実施後も、必要に応じて継続的に伴走します。" },
 ];
 
+const HARASSMENT_SUPPORT = [
+  "外部相談窓口（EAP）：判断に迷う段階から、職員が直接相談できます",
+  "被害を受けた職員の心理的フォロー",
+  "管理者・サービス提供責任者への助言",
+  "カスハラ研修（受けた後のセルフケア、抱え込み予防）",
+  "外部相談窓口の運用ルールづくりの支援",
+];
+
 export default function CorporatePage() {
   return (
     <>
@@ -70,6 +78,7 @@ export default function CorporatePage() {
           { href: "#eap", label: "EAP" },
           { href: "#check", label: "ストレスチェック" },
           { href: "#training", label: "研修" },
+          { href: "#customer-harassment", label: "カスハラ対策" },
           { href: "#flow", label: "導入の流れ" },
         ]}
         blobColor="var(--color-sky-soft)"
@@ -203,8 +212,41 @@ export default function CorporatePage() {
         </Container>
       </Reveal>
 
+      {/* ============ カスタマーハラスメント対策 ============ */}
+      <Reveal id="customer-harassment" className="bg-bg-alt px-5 py-16 tab:px-10" threshold={0.12}>
+        <Container maxWidth="900px" className="!px-0">
+          <div className="mb-2 text-xs tracking-[0.24em] text-ink-faint">05 — カスタマーハラスメント対策</div>
+          <h2 className="mb-4 font-serif text-[22px] font-semibold">「仕方ない」で、終わらせない。</h2>
+          <div className="mb-8 flex max-w-[640px] flex-col gap-4 text-sm leading-[1.9] text-ink-soft">
+            <p>
+              利用者やご家族からの暴言、暴力、理不尽な要求、セクシュアルハラスメント。利用者やご家族との距離が近い現場で働く人ほど、「病気だから」「関係を壊したくないから」と、ひとりで抱え込んでしまいます。
+            </p>
+            <p>
+              公認心理師・キャリアコンサルタントとして、傷ついた職員のこころのケアと、事業所の相談体制づくりに伴走します。東京都カスタマー・ハラスメント防止条例や、事業主に求められる措置を踏まえて取り組む、小規模な介護・福祉・医療事業所を支えます。
+            </p>
+          </div>
+
+          <div className="mb-3 text-[11px] tracking-[0.1em] text-ink-faint">できること</div>
+          <ul className="mb-9 flex list-none flex-col border-t border-border p-0">
+            {HARASSMENT_SUPPORT.map((item) => (
+              <li key={item} className="border-b border-border py-4 text-[13.5px] leading-[1.8] text-ink-soft">
+                {item}
+              </li>
+            ))}
+          </ul>
+
+          <div className="flex flex-col gap-2 rounded-card-sm border border-border bg-surface p-6">
+            <div className="text-[11px] text-ink-faint">対応地域</div>
+            <div className="text-[13.5px] leading-[1.7] text-ink-soft">東京都内（対面）／全国（オンライン）</div>
+          </div>
+          <p className="mt-4 text-xs leading-[1.8] text-ink-faint">
+            ※法的な対応が必要な場合は、弁護士等の専門家との連携をご案内します。緊急出動や現場での指示は行っておりません。
+          </p>
+        </Container>
+      </Reveal>
+
       {/* ============ 導入の流れ ============ */}
-      <Reveal id="flow" className="bg-bg-alt px-5 pb-24 pt-16 tab:px-10" threshold={0.12}>
+      <Reveal id="flow" className="px-5 pb-24 pt-16 tab:px-10" threshold={0.12}>
         <Container maxWidth="900px" className="!px-0">
           <div className="mb-10 flex flex-col items-center gap-3.5 text-center">
             <div className="text-xs tracking-[0.24em] text-ink-faint">FLOW</div>
